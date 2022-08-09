@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		299BAC5D28A2896E0077C154 /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299BAC5C28A2896E0077C154 /* WordCell.swift */; };
 		29B4E21828A27E4800C0E19F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4E21728A27E4800C0E19F /* AppDelegate.swift */; };
 		29B4E21A28A27E4800C0E19F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4E21928A27E4800C0E19F /* SceneDelegate.swift */; };
 		29B4E21C28A27E4800C0E19F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4E21B28A27E4800C0E19F /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 		29B4E22F28A27E4900C0E19F /* CrowerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4E22E28A27E4900C0E19F /* CrowerTests.swift */; };
 		29B4E23928A27E4900C0E19F /* CrowerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4E23828A27E4900C0E19F /* CrowerUITests.swift */; };
 		29B4E23B28A27E4900C0E19F /* CrowerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4E23A28A27E4900C0E19F /* CrowerUITestsLaunchTests.swift */; };
+		29B4E24828A2833800C0E19F /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4E24728A2833800C0E19F /* HomeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		299BAC5C28A2896E0077C154 /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
 		29B4E21428A27E4800C0E19F /* Crower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B4E21728A27E4800C0E19F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29B4E21928A27E4800C0E19F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 		29B4E23428A27E4900C0E19F /* CrowerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrowerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B4E23828A27E4900C0E19F /* CrowerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowerUITests.swift; sourceTree = "<group>"; };
 		29B4E23A28A27E4900C0E19F /* CrowerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		29B4E24728A2833800C0E19F /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,10 +106,12 @@
 				29B4E21728A27E4800C0E19F /* AppDelegate.swift */,
 				29B4E21928A27E4800C0E19F /* SceneDelegate.swift */,
 				29B4E21B28A27E4800C0E19F /* ViewController.swift */,
+				29B4E24728A2833800C0E19F /* HomeController.swift */,
 				29B4E21D28A27E4800C0E19F /* Main.storyboard */,
 				29B4E22028A27E4900C0E19F /* Assets.xcassets */,
 				29B4E22228A27E4900C0E19F /* LaunchScreen.storyboard */,
 				29B4E22528A27E4900C0E19F /* Info.plist */,
+				299BAC5C28A2896E0077C154 /* WordCell.swift */,
 			);
 			path = Crower;
 			sourceTree = "<group>";
@@ -258,6 +264,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				299BAC5D28A2896E0077C154 /* WordCell.swift in Sources */,
+				29B4E24828A2833800C0E19F /* HomeController.swift in Sources */,
 				29B4E21C28A27E4800C0E19F /* ViewController.swift in Sources */,
 				29B4E21828A27E4800C0E19F /* AppDelegate.swift in Sources */,
 				29B4E21A28A27E4800C0E19F /* SceneDelegate.swift in Sources */,
@@ -437,11 +445,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8YQ35HP37L;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Crower/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -464,11 +472,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8YQ35HP37L;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Crower/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
