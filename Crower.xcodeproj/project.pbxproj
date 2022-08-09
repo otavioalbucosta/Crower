@@ -18,6 +18,7 @@
 		29B4E23928A27E4900C0E19F /* CrowerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4E23828A27E4900C0E19F /* CrowerUITests.swift */; };
 		29B4E23B28A27E4900C0E19F /* CrowerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4E23A28A27E4900C0E19F /* CrowerUITestsLaunchTests.swift */; };
 		29B4E24828A2833800C0E19F /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4E24728A2833800C0E19F /* HomeController.swift */; };
+		D96FBD2C28A2A4C80017F0D5 /* UserCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96FBD2B28A2A4C80017F0D5 /* UserCellCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		29B4E23828A27E4900C0E19F /* CrowerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowerUITests.swift; sourceTree = "<group>"; };
 		29B4E23A28A27E4900C0E19F /* CrowerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		29B4E24728A2833800C0E19F /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		D96FBD2B28A2A4C80017F0D5 /* UserCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		29B4E21628A27E4800C0E19F /* Crower */ = {
 			isa = PBXGroup;
 			children = (
+				D96FBD2B28A2A4C80017F0D5 /* UserCellCollectionViewCell.swift */,
 				29B4E21728A27E4800C0E19F /* AppDelegate.swift */,
 				29B4E21928A27E4800C0E19F /* SceneDelegate.swift */,
 				29B4E21B28A27E4800C0E19F /* ViewController.swift */,
@@ -266,6 +269,7 @@
 			files = (
 				299BAC5D28A2896E0077C154 /* WordCell.swift in Sources */,
 				29B4E24828A2833800C0E19F /* HomeController.swift in Sources */,
+				D96FBD2C28A2A4C80017F0D5 /* UserCellCollectionViewCell.swift in Sources */,
 				29B4E21C28A27E4800C0E19F /* ViewController.swift in Sources */,
 				29B4E21828A27E4800C0E19F /* AppDelegate.swift in Sources */,
 				29B4E21A28A27E4800C0E19F /* SceneDelegate.swift in Sources */,
@@ -445,13 +449,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8YQ35HP37L;
+				DEVELOPMENT_TEAM = SMA3U9UPC8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Crower/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -472,13 +477,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8YQ35HP37L;
+				DEVELOPMENT_TEAM = SMA3U9UPC8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Crower/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
