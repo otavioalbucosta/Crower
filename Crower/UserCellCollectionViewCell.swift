@@ -21,14 +21,18 @@ class UserCellCollectionViewCell: UICollectionViewCell {
     
     let profileImageView: UIImageView = {
         let imageView = UIImageView ()
+        imageView.image = UIImage(named: "crow_icon")
+        imageView.layer.cornerRadius = 5
+        imageView.clipsToBounds = true
         imageView.backgroundColor = .red
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "TESTE TESTE"
-        label.backgroundColor = .green
+        label.text = "corvinalovers"
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
         
@@ -38,21 +42,33 @@ class UserCellCollectionViewCell: UICollectionViewCell {
     let userNameLabel: UILabel = {
         let label = UILabel()
         label.text = "@username"
-        label.backgroundColor = .purple
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     let bioTextView: UITextView = {
         let textView = UITextView()
-        textView.backgroundColor = .yellow
+        textView.text = "fanclub ravenclawn brasil lorem  ipsum dolor aaaaaaaaa"
+        textView.backgroundColor = .black
+        textView.textColor = .white
+        textView.font = UIFont.systemFont(ofSize: 15)
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
     
     let followButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .cyan
+        let twitterBlue = UIColor (red: 0.23, green: 0.65, blue: 0.95, alpha: 1)
+        button.layer.cornerRadius = 5
+        button.layer.borderColor = twitterBlue.cgColor
+        button.layer.borderWidth = 1
+        button.setTitle("Like", for: .normal)
+        button.setImage(UIImage(systemName: "heart"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -8, bottom: 0, right: 0)
+        button.setTitleColor(twitterBlue, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -72,21 +88,27 @@ class UserCellCollectionViewCell: UICollectionViewCell {
         
         nameLabel.topAnchor.constraint(equalTo: profileImageView.topAnchor, constant: 0).isActive = true
         nameLabel.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 8).isActive = true
-        nameLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -12).isActive = true
+        nameLabel.rightAnchor.constraint(equalTo: followButton.leftAnchor, constant: -12).isActive = true
         nameLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
-        userNameLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8).isActive = true
+        userNameLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 0).isActive = true
         userNameLabel.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 8).isActive = true
         userNameLabel.rightAnchor.constraint(equalTo: nameLabel.rightAnchor).isActive = true
         userNameLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
+       
         
-        bioTextView.topAnchor.constraint(equalTo: userNameLabel.bottomAnchor, constant: 10).isActive = true
-        bioTextView.leftAnchor.constraint(equalTo: nameLabel.leftAnchor).isActive = true
-        bioTextView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 40).isActive = true
+        bioTextView.topAnchor.constraint(equalTo: userNameLabel.bottomAnchor, constant: -4).isActive = true
+        bioTextView.leftAnchor.constraint(equalTo: nameLabel.leftAnchor, constant: -4).isActive = true
+        bioTextView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
         bioTextView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
         followButton.topAnchor.constraint(equalTo: profileImageView.topAnchor).isActive = true
-        followButton.leftAnchor.constraint(equalTo: nameLabel.rightAnchor).isActive = true
+        //followButton.leftAnchor.constraint(equalTo: nameLabel.rightAnchor).isActive = true
+        followButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -12).isActive = true
+        followButton.heightAnchor.constraint(equalToConstant: 34).isActive = true
+        followButton.widthAnchor.constraint(equalToConstant: 120).isActive = true
+        
+
         
         
     }
