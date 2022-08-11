@@ -119,8 +119,10 @@ class UserCellCollectionViewCell: UICollectionViewCell {
     @objc func didSelectButton(_ sender: Any) {
         
         Task{
-            let res = try await API.createUser(name: "Leticia", email: "Leticia@academy.com", password: "morango123")
+            //let res = try await API.createUser(name: "Leticia", email: "Leticia@academy.com", password: "morango123")
+            let res = try await API.login(username: "Leticia", password: "morango123")
             print(res)
+            
         }
         
     }

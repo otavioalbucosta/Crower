@@ -66,5 +66,27 @@ class API {
             print(error)
         }
         return nil
+        
+    }
+    static func login(username: String, password: String) async -> Session? {
+        let login: String = "\(username):\(password)"
+        let logindata = login.data(using: .utf8)
+        let base64 = logindata?.base64EncodedString()
+        
+        var request = URLRequest (url: URL(string: "http://adaspace.local/users/login")!)
+        request.httpMethod = "POST"
+        request.allHTTPHeaderFields = ["Content-type": "text/plain"]
+        request.setValue("Basic \(base64)", forHTTPHeaderField: "Authorization")
+        
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+            let session = try JSONDecoder().decode(Session.self, from: data)
+            return session
+        }
+        catch {
+            print(error)
+            
+        }
+        return nil
     }
 }
