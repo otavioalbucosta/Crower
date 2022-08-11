@@ -11,5 +11,5 @@ struct User: Codable{
     var id: UUID
     var name: String
     var email: String
-    var avatar: String
+    var avatar: String?
 }

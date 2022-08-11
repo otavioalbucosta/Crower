@@ -10,4 +10,6 @@ import Foundation
 struct Session: Codable {
     var token: String
     var user: User
+    
+    
 }

@@ -70,6 +70,9 @@ class UserCellCollectionViewCell: UICollectionViewCell {
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -8, bottom: 0, right: 0)
         button.setTitleColor(twitterBlue, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
+        
+        button.addTarget(self, action: #selector(didSelectButton), for: .touchUpInside)
+        
         return button
     }()
     
@@ -110,6 +113,15 @@ class UserCellCollectionViewCell: UICollectionViewCell {
         
 
         
+        
+    }
+    
+    @objc func didSelectButton(_ sender: Any) {
+        
+        Task{
+            let res = try await API.createUser(name: "Leticia", email: "Leticia@academy.com", password: "morango123")
+            print(res)
+        }
         
     }
     

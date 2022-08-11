@@ -8,9 +8,16 @@
 import Foundation
 
 struct Post: Codable {
-    var id: UUID
-    var content: String
-    var userid: UUID
-    var createdat: Date
-    var updatedat: Date?
+    let id: UUID
+    let content: String
+    let userid: UUID
+    let createdat: Date
+    let updatedat: Date?
+    
+    enum CodingKeys: String, CodingKey {
+        case id, content
+        case userid = "user_id"
+        case createdat = "created_at"
+        case updatedat = "updated_at"
+    }
 }
