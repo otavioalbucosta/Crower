@@ -48,15 +48,15 @@ class UserCellCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    let bioTextView: UITextView = {
-        let textView = UITextView()
-        textView.text = "fanclub ravenclawn brasil lorem  ipsum dolor aaaaaaaaa"
-        textView.backgroundColor = .black
-        textView.textColor = .white
-        textView.font = UIFont.systemFont(ofSize: 15)
-        textView.translatesAutoresizingMaskIntoConstraints = false
-        return textView
-    }()
+//    let bioTextView: UITextView = {
+//        let textView = UITextView()
+//        textView.text = "fanclub ravenclawn brasil lorem  ipsum dolor aaaaaaaaa"
+//        textView.backgroundColor = .black
+//        textView.textColor = .white
+//        textView.font = UIFont.systemFont(ofSize: 15)
+//        textView.translatesAutoresizingMaskIntoConstraints = false
+//        return textView
+//    }()
     
     let followButton: UIButton = {
         let button = UIButton()
@@ -64,10 +64,10 @@ class UserCellCollectionViewCell: UICollectionViewCell {
         button.layer.cornerRadius = 5
         button.layer.borderColor = twitterBlue.cgColor
         button.layer.borderWidth = 1
-        button.setTitle("Like", for: .normal)
-        button.setImage(UIImage(systemName: "heart"), for: .normal)
+        
+        button.setImage(UIImage(systemName: "rectangle.portrait.and.arrow.right"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
-        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -8, bottom: 0, right: 0)
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         button.setTitleColor(twitterBlue, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         
@@ -81,7 +81,7 @@ class UserCellCollectionViewCell: UICollectionViewCell {
         addSubview(profileImageView)
         addSubview(nameLabel)
         addSubview(userNameLabel)
-        addSubview(bioTextView)
+//        addSubview(bioTextView)
         addSubview(followButton)
         
         profileImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 12).isActive = true
@@ -99,17 +99,17 @@ class UserCellCollectionViewCell: UICollectionViewCell {
         userNameLabel.rightAnchor.constraint(equalTo: nameLabel.rightAnchor).isActive = true
         userNameLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
        
-        
-        bioTextView.topAnchor.constraint(equalTo: userNameLabel.bottomAnchor, constant: -4).isActive = true
-        bioTextView.leftAnchor.constraint(equalTo: nameLabel.leftAnchor, constant: -4).isActive = true
-        bioTextView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
-        bioTextView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+//
+//        bioTextView.topAnchor.constraint(equalTo: userNameLabel.bottomAnchor, constant: -4).isActive = true
+//        bioTextView.leftAnchor.constraint(equalTo: nameLabel.leftAnchor, constant: -4).isActive = true
+//        bioTextView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
+//        bioTextView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
         followButton.topAnchor.constraint(equalTo: profileImageView.topAnchor).isActive = true
         //followButton.leftAnchor.constraint(equalTo: nameLabel.rightAnchor).isActive = true
         followButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -12).isActive = true
         followButton.heightAnchor.constraint(equalToConstant: 34).isActive = true
-        followButton.widthAnchor.constraint(equalToConstant: 120).isActive = true
+        followButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
         
 
         
@@ -122,7 +122,7 @@ class UserCellCollectionViewCell: UICollectionViewCell {
             //let res = try await API.createUser(name: "Leticia", email: "Leticia@academy.com", password: "morango123")
             let res = try await API.login(username: "ldruta@gmail.com", password: "morango123")
             print(res)
-            let ans = try await API.logout(token: res!.token)
+            let ans = try await API.createpost(token: res!.token, content: "ola mundo")
             print(ans)
 
         }
