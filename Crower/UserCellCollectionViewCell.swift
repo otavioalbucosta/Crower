@@ -120,9 +120,11 @@ class UserCellCollectionViewCell: UICollectionViewCell {
         
         Task{
             //let res = try await API.createUser(name: "Leticia", email: "Leticia@academy.com", password: "morango123")
-            let res = try await API.login(username: "Leticia", password: "morango123")
+            let res = try await API.login(username: "ldruta@gmail.com", password: "morango123")
             print(res)
-            
+            let ans = try await API.logout(token: res!.token)
+            print(ans)
+
         }
         
     }
