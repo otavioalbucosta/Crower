@@ -98,6 +98,16 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		299BAC6128AD0A5A0077C154 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D96FBD2B28A2A4C80017F0D5 /* UserCellCollectionViewCell.swift */,
+				29B4E21B28A27E4800C0E19F /* ViewController.swift */,
+				29B4E24728A2833800C0E19F /* HomeController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		29B4E20B28A27E4800C0E19F = {
 			isa = PBXGroup;
 			children = (
@@ -122,12 +132,10 @@
 			isa = PBXGroup;
 			children = (
 				D9C5FF4928A3FA2B0043AAE1 /* Model */,
+				299BAC6128AD0A5A0077C154 /* Controllers */,
 				299BAC5E28A3D6010077C154 /* Service */,
-				D96FBD2B28A2A4C80017F0D5 /* UserCellCollectionViewCell.swift */,
 				29B4E21728A27E4800C0E19F /* AppDelegate.swift */,
 				29B4E21928A27E4800C0E19F /* SceneDelegate.swift */,
-				29B4E21B28A27E4800C0E19F /* ViewController.swift */,
-				29B4E24728A2833800C0E19F /* HomeController.swift */,
 				29B4E21D28A27E4800C0E19F /* Main.storyboard */,
 				29B4E22028A27E4900C0E19F /* Assets.xcassets */,
 				29B4E22228A27E4900C0E19F /* LaunchScreen.storyboard */,

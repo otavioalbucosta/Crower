@@ -19,7 +19,7 @@ class UserCellCollectionViewCell: UICollectionViewCell {
     }
     
     
-    let profileImageView: UIImageView = {
+    var profileImageView: UIImageView = {
         let imageView = UIImageView ()
         imageView.image = UIImage(named: "crow_icon")
         imageView.layer.cornerRadius = 5
@@ -28,7 +28,7 @@ class UserCellCollectionViewCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    let nameLabel: UILabel = {
+    var nameLabel: UILabel = {
         let label = UILabel()
         label.text = "corvinalovers"
         label.font = UIFont.boldSystemFont(ofSize: 16)
@@ -39,7 +39,7 @@ class UserCellCollectionViewCell: UICollectionViewCell {
         
     }()
     
-    let userNameLabel: UILabel = {
+    var userNameLabel: UILabel = {
         let label = UILabel()
         label.text = "@username"
         label.font = UIFont.systemFont(ofSize: 14)
@@ -58,7 +58,7 @@ class UserCellCollectionViewCell: UICollectionViewCell {
 //        return textView
 //    }()
     
-    let followButton: UIButton = {
+    var followButton: UIButton = {
         let button = UIButton()
         let twitterBlue = UIColor (red: 0.23, green: 0.65, blue: 0.95, alpha: 1)
         button.layer.cornerRadius = 5
