@@ -22,7 +22,7 @@ class UserCellCollectionViewCell: UICollectionViewCell {
     var profileImageView: UIImageView = {
         let imageView = UIImageView ()
         imageView.image = UIImage(named: "crow_icon")
-        imageView.layer.cornerRadius = 5
+        imageView.layer.cornerRadius = 25
         imageView.clipsToBounds = true
         imageView.backgroundColor = .red
         imageView.translatesAutoresizingMaskIntoConstraints = false
