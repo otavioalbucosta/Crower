@@ -62,16 +62,18 @@ class UserCellCollectionViewCell: UICollectionViewCell {
         let button = UIButton()
         let twitterBlue = UIColor (red: 0.23, green: 0.65, blue: 0.95, alpha: 1)
         button.layer.cornerRadius = 5
-        button.layer.borderColor = twitterBlue.cgColor
-        button.layer.borderWidth = 1
+        button.backgroundColor = twitterBlue
+//        button.layer.borderColor = UIColor.systemBackground.cgColor
+        button.layer.borderWidth = 0
         
         button.setImage(UIImage(systemName: "rectangle.portrait.and.arrow.right"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
+        button.imageView?.tintColor = .white
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         button.setTitleColor(twitterBlue, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         
-        button.addTarget(self, action: #selector(didSelectButton), for: .touchUpInside)
+//        button.addTarget(self, action: #selector(didSelectButton), for: .touchUpInside)
         
         return button
     }()
@@ -116,18 +118,20 @@ class UserCellCollectionViewCell: UICollectionViewCell {
         
     }
     
-    @objc func didSelectButton(_ sender: Any) {
-        
-        Task{
-            //let res = try await API.createUser(name: "Leticia", email: "Leticia@academy.com", password: "morango123")
-            let res = try await API.login(username: "ldruta@gmail.com", password: "morango123")
-            print(res)
-            let ans = try await API.createpost(token: res!.token, content: "ola mundo")
-            print(ans)
-
-        }
-        
-    }
+//    @objc func didSelectButton(_ sender: Any) {
+//
+//        Task{
+//            //let res = try await API.createUser(name: "Leticia", email: "Leticia@academy.com", password: "morango123")
+////            let res = try await API.login(username: "ldruta@gmail.com", password: "morango123")
+////            print(res)
+////            let ans = try await API.createpost(token: res!.token, content: "ola mundo")
+////            print(ans)
+//            let res = try await API.getAllPosts()
+//            print(res)
+//
+//        }
+//
+//    }
     
 }
 

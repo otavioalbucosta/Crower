@@ -21,3 +21,25 @@ struct Post: Codable {
         case updatedat = "updated_at"
     }
 }
+
+#if DEBUG
+extension Post {
+    static func mock() -> [Post]{
+        var posts: [Post] = []
+        posts.append(Post(id: UUID(), content: "BOM DIA MUNDO DDDDDDDDDDDDDDADADAFAFASA", userid: User.mock()[0].id, createdat: Date(), updatedat: Date()))
+        posts.append(Post(id: UUID(), content: "Alo Alo", userid: User.mock()[1].id, createdat: Date(), updatedat: Date()))
+        posts.append(Post(id: UUID(), content: "BOM DIA MUNDO DDDDDDDDDDDDDDADADAFAFASA", userid: User.mock()[0].id, createdat: Date(), updatedat: Date()))
+        posts.append(Post(id: UUID(), content: "Alo Alo", userid: User.mock()[1].id, createdat: Date(), updatedat: Date()))
+        posts.append(Post(id: UUID(), content: "BOM DIA MUNDO DDDDDDDDDDDDDDADADAFAFASA", userid: User.mock()[0].id, createdat: Date(), updatedat: Date()))
+        posts.append(Post(id: UUID(), content: "Alo Alo", userid: User.mock()[1].id, createdat: Date(), updatedat: Date()))
+        posts.append(Post(id: UUID(), content: "BOM DIA MUNDO DDDDDDDDDDDDDDADADAFAFASA", userid: User.mock()[0].id, createdat: Date(), updatedat: Date()))
+        posts.append(Post(id: UUID(), content: "Alo Alo", userid: User.mock()[1].id, createdat: Date(), updatedat: Date()))
+        posts.append(Post(id: UUID(), content: "BOM DIA MUNDO DDDDDDDDDDDDDDADADAFAFASA", userid: User.mock()[0].id, createdat: Date(), updatedat: Date()))
+        posts.append(Post(id: UUID(), content: "Alo Alo", userid: User.mock()[1].id, createdat: Date(), updatedat: Date()))
+        posts.append(Post(id: UUID(), content: "BOM DIA MUNDO DDDDDDDDDDDDDDADADAFAFASA", userid: User.mock()[0].id, createdat: Date(), updatedat: Date()))
+        posts.append(Post(id: UUID(), content: "Alo Alo", userid: User.mock()[1].id, createdat: Date(), updatedat: Date()))
+        
+        return posts
+    }
+}
+#endif

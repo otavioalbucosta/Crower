@@ -26,6 +26,14 @@ extension User{
         users.append(User(id: UUID(), name: "Otavio", email: "otavio@gmail.com"))
         users.append(User(id: UUID(), name: "Caio", email: "caio@gmail.com"))
         users.append(User(id: UUID(), name: "Lais", email: "lucas@gmail.com"))
+        users.append(User(id: UUID(), name: "Leticia", email: "ldruta@gmail.com"))
+        users.append(User(id: UUID(), name: "Otavio", email: "otavio@gmail.com"))
+        users.append(User(id: UUID(), name: "Caio", email: "caio@gmail.com"))
+        users.append(User(id: UUID(), name: "Lais", email: "lucas@gmail.com"))
+        users.append(User(id: UUID(), name: "Leticia", email: "ldruta@gmail.com"))
+        users.append(User(id: UUID(), name: "Otavio", email: "otavio@gmail.com"))
+        users.append(User(id: UUID(), name: "Caio", email: "caio@gmail.com"))
+        users.append(User(id: UUID(), name: "Lais", email: "lucas@gmail.com"))
         return users
     }
 }

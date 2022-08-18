@@ -10,6 +10,34 @@ import Foundation
 
 class API {
     
+    static func getAllUsers() async -> [User]{
+        let link: String = "http://adaspace.local/users"
+        let request = URLRequest(url: URL(string: link)!)
+        let decoder = JSONDecoder()
+        let formatter = ISO8601DateFormatter()
+        
+        decoder.dateDecodingStrategy = .custom({ decoder in
+            let container = try decoder.singleValueContainer()
+            let dateString = try container.decode(String.self)
+            
+            if let date = formatter.date(from: dateString){
+                return date
+            }
+            
+            throw DecodingError.dataCorruptedError(in: container, debugDescription: "")
+        })
+        
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+            let postList = try decoder.decode([User].self, from: data)
+            return postList
+        }catch {
+            print(error)
+            
+        }
+        return []
+
+    }
     
     static func getAllPosts() async -> [Post]{
         let link: String = "http://adaspace.local/posts"
@@ -39,6 +67,7 @@ class API {
         return []
 
     }
+    
     
     
     static func createUser(name: String, email: String, password: String) async -> Session?{
@@ -81,10 +110,10 @@ class API {
         
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
-            print((response as! HTTPURLResponse).statusCode)
-            print(data)
+//            print((response as! HTTPURLResponse).statusCode)
+//            print(data)
             let session = try JSONDecoder().decode(Session.self, from: data)
-            print(session.token)
+            
             return session
             
         }
