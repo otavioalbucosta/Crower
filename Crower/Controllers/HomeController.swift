@@ -13,7 +13,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     var cellId = "cellId"
     let headerId = "headerId"
-    let footerId = "footerId"
+    let registerId = "registerId"
     var users = [User]()
     var posts = [Post]()
     var session: Session?
@@ -60,7 +60,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         collectionView?.register(CrowViewCell.self, forCellWithReuseIdentifier: cellId)
         collectionView?.register(UserCellCollectionViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
-//        collectionView?.register(UICollectionViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: footerId)
+        collectionView?.register(CreatePostCollectionViewCell.self, forCellWithReuseIdentifier: registerId)
         Task{
             let res = await API.getAllPosts()
             let ans = await API.getAllUsers()
@@ -85,13 +85,21 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.row == 0{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: registerId, for: indexPath)
+            
+            return cell
+        }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CrowViewCell
-        cell.username = self.users.filter({$0.id == self.posts[indexPath.row].userid})[0].name
-        cell.texto = self.posts[indexPath.row].content
+        cell.username = self.users.filter({$0.id == self.posts[indexPath.row - 1].userid})[0].name
+        cell.texto = self.posts[indexPath.row - 1].content
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.row == 0 {
+            return CGSize (width: view.frame.width, height: 170)
+        }
         
         let aproximatedWidthOfBiotextView = view.frame.width - 12 - 50 - 12 - 2
         let size = CGSize(width: aproximatedWidthOfBiotextView, height: 1000)
@@ -127,10 +135,12 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     @objc func logoutAction() {
         Task{
+            do{
             try await API.logout(token:session!.token)
+            }catch{}
             
         }
-        self.dismiss(animated: false)
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }
 
