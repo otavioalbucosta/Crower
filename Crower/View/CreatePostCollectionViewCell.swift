@@ -9,7 +9,7 @@ import UIKit
 
 class CreatePostCollectionViewCell: UICollectionViewCell, UITextViewDelegate {
     
-  
+    var postAction: (() -> Void)?
     
     override init(frame: CGRect){
         super.init(frame: frame)
@@ -78,10 +78,14 @@ class CreatePostCollectionViewCell: UICollectionViewCell, UITextViewDelegate {
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -8, bottom: 0, right: 0)
         button.translatesAutoresizingMaskIntoConstraints = false
         
-//        button.addTarget(self, action: #selector(didSelectButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(didSelectButton), for: .touchUpInside)
         
         return button
     }()
+    
+    @objc func didSelectButton() {
+        postAction?()
+    }
     
     func setupViews(){
         addSubview(postView)

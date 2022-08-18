@@ -16,6 +16,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     let registerId = "registerId"
     var users = [User]()
     var posts = [Post]()
+    var content: String?
     var session: Session?
     var mainColor: UIColor = UIColor(red: 0.05, green: 0.04, blue: 0.18, alpha: 1.00)
     var secondaryColor: UIColor = UIColor(red: 0.30, green: 0.45, blue: 0.71, alpha: 1.00)
@@ -31,6 +32,8 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         navigationItem.scrollEdgeAppearance = app
         navigationItem.standardAppearance = app
         tabBarController?.tabBar.barTintColor = secondaryColor
+
+        
         
         
     }
@@ -54,6 +57,8 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupHideKeyboardOnTap()
+        navigationItem.hidesBackButton = true
         let flow = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         flow.sectionHeadersPinToVisibleBounds = true
         collectionView?.backgroundColor = mainColor
@@ -67,7 +72,6 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
             self.posts = res
             self.users = ans
             self.collectionView.reloadData()
-            
         }
 //        self.posts = Post.mock()
 //        view.addSubview(floatButton)
@@ -80,14 +84,25 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.posts.count
+        return self.posts.count + 1
         
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0{
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: registerId, for: indexPath)
-            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: registerId, for: indexPath) as! CreatePostCollectionViewCell
+            cell.postAction = { [self] in
+                Task{
+                    let res = try await API.createpost(token: session!.token, content: cell.postField.text)
+                    if let res = res {
+                        DispatchQueue.main.async {
+                            self.posts.insert(res, at: 0)
+                            self.collectionView.reloadData()
+                            cell.postField.text = ""
+                        }
+                    }
+                }
+            }
             return cell
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CrowViewCell
@@ -105,7 +120,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         let size = CGSize(width: aproximatedWidthOfBiotextView, height: 1000)
         let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15)]
         
-        let estimatedFrame = NSString(string: posts[indexPath.row].content).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
+        let estimatedFrame = NSString(string: posts[indexPath.row - 1].content).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
         
         return CGSize(width: view.frame.width, height: estimatedFrame.height + 80)
         
@@ -142,5 +157,21 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         }
         self.navigationController?.popToRootViewController(animated: true)
     }
+    
+    
+    
+    func setupHideKeyboardOnTap() {
+            self.view.addGestureRecognizer(self.endEditingRecognizer())
+            self.navigationController?.navigationBar.addGestureRecognizer(self.endEditingRecognizer())
+        }
+
+        /// Dismisses the keyboard from self.view
+        private func endEditingRecognizer() -> UIGestureRecognizer {
+            let tap = UITapGestureRecognizer(target: self.view, action: #selector(self.view.endEditing(_:)))
+            tap.cancelsTouchesInView = false
+            return tap
+        }
+    
+    
 }
 
