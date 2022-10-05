@@ -73,6 +73,10 @@ class LoginScreen: UIView {
     
     lazy var loginButton: UIButton = {
         let button = UIButton()
+        let haptics = UIImpactFeedbackGenerator(
+            style: .soft
+        )
+        haptics.impactOccurred(intensity: 1.00)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Login", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
