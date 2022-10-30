@@ -23,6 +23,7 @@
 		29B4E23928A27E4900C0E19F /* CrowerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4E23828A27E4900C0E19F /* CrowerUITests.swift */; };
 		29B4E23B28A27E4900C0E19F /* CrowerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4E23A28A27E4900C0E19F /* CrowerUITestsLaunchTests.swift */; };
 		29B4E24828A2833800C0E19F /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4E24728A2833800C0E19F /* HomeController.swift */; };
+		B925F3F0290EEC0900D683CC /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B925F3EF290EEC0900D683CC /* Router.swift */; };
 		D91289CC28AD14B200E7919F /* CrowViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91289CB28AD14B200E7919F /* CrowViewCell.swift */; };
 		D96FBD2C28A2A4C80017F0D5 /* UserCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96FBD2B28A2A4C80017F0D5 /* UserCellCollectionViewCell.swift */; };
 		D9C5FF4B28A3FA3D0043AAE1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C5FF4A28A3FA3D0043AAE1 /* User.swift */; };
@@ -68,6 +69,7 @@
 		29B4E23828A27E4900C0E19F /* CrowerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowerUITests.swift; sourceTree = "<group>"; };
 		29B4E23A28A27E4900C0E19F /* CrowerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		29B4E24728A2833800C0E19F /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		B925F3EF290EEC0900D683CC /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		D91289CB28AD14B200E7919F /* CrowViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowViewCell.swift; sourceTree = "<group>"; };
 		D96FBD2B28A2A4C80017F0D5 /* UserCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		D9C5FF4A28A3FA3D0043AAE1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				299BAC5F28A3D60C0077C154 /* API.swift */,
+				B925F3EF290EEC0900D683CC /* Router.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				D91289CC28AD14B200E7919F /* CrowViewCell.swift in Sources */,
 				D96FBD2C28A2A4C80017F0D5 /* UserCellCollectionViewCell.swift in Sources */,
 				2947BBB428ADEA9A00F3874E /* LoginScreen.swift in Sources */,
+				B925F3F0290EEC0900D683CC /* Router.swift in Sources */,
 				29B4E21C28A27E4800C0E19F /* ViewController.swift in Sources */,
 				D9C5FF4B28A3FA3D0043AAE1 /* User.swift in Sources */,
 				2947BBB628AE5D2E00F3874E /* RegisterScreen.swift in Sources */,
