@@ -68,7 +68,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         collectionView?.register(CreatePostCollectionViewCell.self, forCellWithReuseIdentifier: registerId)
         Task{
             let res = await API.getAllPosts()
-            let ans = await API.getAllUsers()
+            let ans = await API().getAllUsers()
             self.posts = res
             self.users = ans
             self.collectionView.reloadData()
