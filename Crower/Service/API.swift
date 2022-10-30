@@ -9,8 +9,14 @@ import Foundation
 
 
 class API {
+
+    let session: URLSession
+
+    init(session: URLSession = .shared) {
+        self.session = session
+    }
     
-    static func getAllUsers() async -> [User]{
+    func getAllUsers() async -> [User]{
         let link: URL = Router(path: "users").url
         let request = URLRequest(url: link)
         let decoder = JSONDecoder()
@@ -28,7 +34,7 @@ class API {
         })
         
         do {
-            let (data, response) = try await URLSession.shared.data(for: request)
+            let (data, response) = try await session.data(for: request)
             let postList = try decoder.decode([User].self, from: data)
             return postList
         }catch {
