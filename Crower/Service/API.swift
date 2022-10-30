@@ -11,8 +11,8 @@ import Foundation
 class API {
     
     static func getAllUsers() async -> [User]{
-        let link: String = "http://adaspace.local/users"
-        let request = URLRequest(url: URL(string: link)!)
+        let link: URL = Router(path: "users").url
+        let request = URLRequest(url: link)
         let decoder = JSONDecoder()
         let formatter = ISO8601DateFormatter()
         
